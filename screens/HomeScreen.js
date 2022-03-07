@@ -19,7 +19,7 @@ const HomeScreen = ({navigation}) => {
       headerRight: () => (
         <View style={{marginRight: 20}}>
           <TouchableOpacity activeOpacity={0.5} onPress={signOutUser}>
-            <Text style={{fontWeight: 'bold'}}>Logout</Text>
+            <Text style={{fontWeight: 'bold'}}>Log Out</Text>
           </TouchableOpacity>
         </View>
       ),
@@ -116,7 +116,10 @@ const HomeScreen = ({navigation}) => {
             }}
           />
           <View style={{marginLeft: 10}}>
-            <Text style={{fontWeight: 'bold'}}>Welcome</Text>
+            <Text style={{
+              fontWeight: 'bold',
+            marginTop:4
+            }}>Welcome</Text>
             <Text h4 style={{color: '#4A2D5D'}}>
               {auth.currentUser.displayName}
             </Text>
@@ -124,17 +127,26 @@ const HomeScreen = ({navigation}) => {
         </View>
         <View style={styles.card}>
           <View style={styles.cardTop}>
-            <Text style={{textAlign: 'center', color: 'aliceblue'}}>
+            <Text  style={{
+              textAlign: 'center',
+              fontWeight:'bold',
+              color: 'aliceblue',
+              fontSize:17,
+            }}>
               Total Balance
             </Text>
-            <Text h3 style={{textAlign: 'center', color: 'aliceblue'}}>
+            <Text h1 style={{
+              textAlign: 'center',
+              fontWeight:'bold',
+               color: 'aliceblue'
+            }}>
               $ {totalBalance.toFixed(2)}
             </Text>
           </View>
           <View style={styles.cardBottom}>
             <View>
               <View style={styles.cardBottomSame}>
-                <Feather name='arrow-down' size={18} color='green' />
+                <Feather name='arrow-down' size={32} color='green' />
                 <Text
                   style={{
                     textAlign: 'center',
@@ -144,18 +156,26 @@ const HomeScreen = ({navigation}) => {
                   Income
                 </Text>
               </View>
-              <Text h4 style={{textAlign: 'center'}}>
+              <Text h3 style={{
+                textAlign: 'center',
+                marginBottom: 32,
+
+              }}>
                 {`$ ${income?.toFixed(2)}`}
               </Text>
             </View>
             <View>
               <View style={styles.cardBottomSame}>
-                <Feather name='arrow-up' size={18} color='red' />
+                <Feather name='arrow-up' size={32} color='red' />
                 <Text style={{textAlign: 'center', marginLeft: 5}}>
                   Expense
                 </Text>
               </View>
-              <Text h4 style={{textAlign: 'center'}}>
+              <Text h3 style={{
+                textAlign: 'center',
+                marginBottom: 32,
+
+              }}>
                 {`$ ${expense?.toFixed(2)}`}
               </Text>
             </View>
@@ -163,7 +183,11 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         <View style={styles.recentTitle}>
-          <Text h4 style={{color: '#4A2D5D'}}>
+          <Text  style={{
+            color: '#4A2D5D',
+            fontSize: 17,
+            fontWeight:'bold'
+          }}>
             Recent Transactions
           </Text>
           <TouchableOpacity
@@ -200,20 +224,20 @@ const HomeScreen = ({navigation}) => {
           activeOpacity={0.5}
           onPress={() => navigation.navigate('Home')}
         >
-          <AntDesign name='home' size={24} color='#66AFBB' />
+          <AntDesign name='home' size={32} color='#66AFBB' />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.plusButton}
           onPress={() => navigation.navigate('Add')}
           activeOpacity={0.5}
         >
-          <AntDesign name='plus' size={24} color='white' />
+          <AntDesign name='plus' size={32} color='white' />
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() => navigation.navigate('All')}
         >
-          <FontAwesome5 name='list-alt' size={24} color='#EF8A76' />
+          <FontAwesome5 name='list-alt' size={32} color='#EF8A76' />
         </TouchableOpacity>
       </View>
     </>
@@ -262,6 +286,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    height: 52,
+    justifyContent:'center'
   },
   recentTitle: {
     flexDirection: 'row',
@@ -276,18 +302,19 @@ const styles = StyleSheet.create({
   seeAll: {
     fontWeight: 'bold',
     color: 'green',
-    fontSize: 16,
+    fontSize: 15,
+    marginRight:12
   },
   addButton: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 12,
     padding: 10,
     backgroundColor: 'white',
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: '#eee',
     shadowOffset: {
       width: 0,
       height: 12,
