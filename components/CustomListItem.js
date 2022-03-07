@@ -27,8 +27,11 @@ const CustomListItem = ({info, navigation, id}) => {
               {info?.text}
             </ListItem.Title>
             <ListItem.Subtitle>
-              {/* {new Date(info?.timestamp?.toDate()).toUTCString()} */}
-              {info?.userDate}
+              {new Date(info?.timestamp?.toDate()).toLocaleString()}
+
+            </ListItem.Subtitle>
+            <ListItem.Subtitle>
+              {info.category}
             </ListItem.Subtitle>
           </ListItem.Content>
           <View>

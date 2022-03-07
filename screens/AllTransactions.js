@@ -56,8 +56,11 @@ const AllTransactions = ({navigation}) => {
         </SafeAreaView>
       ) : (
         <View style={styles.containerNull}>
-          <FontAwesome5 name='list-alt' size={24} color='#EF8A76' />
-          <Text h4 style={{color: '#4A2D5D'}}>
+          <FontAwesome5 name='list-alt' size={42} color='#EF8A76' />
+            <Text h4 style={{
+              color: '#4A2D5D',
+              fontSize: 13,
+            }}>
             No Transactions
           </Text>
         </View>
